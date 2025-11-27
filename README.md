@@ -295,7 +295,9 @@ const char* password = "Your_WiFi_Password";
 ## 🎯 Game Engine
 ### Configuration Files:
 
-The game engine uses CSV files for configuration:
+The game engine is still i develop!
+
+The module will use a CSV files for configuration:
 
 game.csv format:
 ```csv
@@ -304,6 +306,7 @@ ID,COMMAND,AUDIO_FILE,ENGINE_ROUTINE,NEXT_STEP,FUNCTION
 0,0,1,0,1,0        # Play audio 1, go to step 1
 1,4,2,-1,-1,1      # Play audio 2 + evaluate function block 1
 
+```
 functions.csv format:
 
 ```csv
