@@ -141,7 +141,7 @@ FurbyESP32/
     ├── tales/               # Story folders (0/, 1/, etc.)
     ├── games/               # Game configurations
     └── mp3/                 # Music files (1.mp3, 2.mp3, etc.)
-
+```
 
 
 
