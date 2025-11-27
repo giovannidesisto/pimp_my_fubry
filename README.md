@@ -116,7 +116,7 @@ Timezone                 1.2.5     1.2.6     user     Arduino library to facilit
 
 ## 📁 Project Structure
 
-```ini
+```text
 FurbyESP32/
 ├── Babo.ino                 # Main application file
 ├── Furby.h                  # Core Furby class
