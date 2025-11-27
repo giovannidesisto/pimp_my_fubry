@@ -45,6 +45,7 @@ This project modernizes a vintage Furby animatronic toy using an ESP32 microcont
 - **5V Power Supply**
 
 ## 🔌 Wiring Diagram
+```ini
 ┌─────────────────────────────────────────────────────────────┐
 │ LOLIN D32                                                   │
 │ │                                                           |
@@ -83,14 +84,15 @@ This project modernizes a vintage Furby animatronic toy using an ESP32 microcont
 │ EN ───── GPIO21 (WIFI_EN - legacy reset button)             |
 |                                                             |
 └─────────────────────────────────────────────────────────────┘
-
-
+```
 
 
 ## 📚 Software Libraries
 
 ### Bord version
+```ini
 ESP32		         1.0.6     # By Espressif System
+```
 ### Required Libraries:
 ```ini
 Adafruit BusIO           1.17.1+   # I2C/SPI abstraction
@@ -100,7 +102,7 @@ ESP8266Audio             1.9.5+    # I2S audio playback
 SimpleFTPServer          Latest    # FTP server functionality
 Time                     1.6.1     -         user     -
 Timezone                 1.2.5     1.2.6     user     Arduino library to facilitate time zo...
-
+```
 
 
 
@@ -205,26 +207,31 @@ FurbyESP32/
 
 ## ⌨️ Serial Commands
 Audio Control
-bash
+```bash
 
 audio@/path/file.mp3    # Play specific audio file
 +                       # Increase volume (5%)
 -                       # Decrease volume (5%)
+```
+
 
 System Control
-bash
+```bash
 
 mode                    # Cycle through operational modes
 i                       # Print input sensor status
+```
+
 
 LED Control
-bash
-
+```bash
 l@ON                    # Turn NeoPixel green
 l@OFF                   # Turn NeoPixel off
+```
+
 
 Input Simulation (Testing)
-bash
+```bash
 
 # Front button simulation
 fn, fc, f1, f2, f3      # NOT_CLICKING, CLICKING, 1s, 2s, 3s
@@ -232,10 +239,15 @@ fn, fc, f1, f2, f3      # NOT_CLICKING, CLICKING, 1s, 2s, 3s
 # Rear button simulation  
 rn, rc, r1, r2, r3      # NOT_CLICKING, CLICKING, 1s, 2s, 3s
 
+
+```
 Configuration
-bash
+```bash
 
 x@500                   # Set encoder threshold value
+
+
+```
 
 # 📡 OTA Updates
 Activation:
@@ -254,10 +266,12 @@ Usage:
 # WiFi Configuration:
 
 Edit FurbyWifi.h:
-cpp
+
+```cpp
 
 const char* ssid = "Your_WiFi_SSID";
 const char* password = "Your_WiFi_Password";
+```
 
 # 📁 FTP Server
 ## Access:
@@ -284,26 +298,31 @@ const char* password = "Your_WiFi_Password";
 The game engine uses CSV files for configuration:
 
 game.csv format:
-csv
+```csv
 
 ID,COMMAND,AUDIO_FILE,ENGINE_ROUTINE,NEXT_STEP,FUNCTION
 0,0,1,0,1,0        # Play audio 1, go to step 1
 1,4,2,-1,-1,1      # Play audio 2 + evaluate function block 1
 
 functions.csv format:
-csv
+
+```csv
 
 ID,FUNCTION,NEXT_STEP
 0,"1_=_1_-1_&;2_=_-1_3_|",2    # If condition true, go to step 2
 
+```
+
 ### Command Types:
-cpp
+```cpp
 
 GAME_TYPE_AUDIO = 0             // Audio only
 GAME_TYPE_AUDIO_ENGINE = 1      // Audio + motor
 GAME_TYPE_ENGINE = 2            // Motor only
 GAME_TYPE_EVAL_INPUT = 3        // Evaluate input
 GAME_TYPE_EVAL_INPUT_AUDIO = 4  // Audio + evaluate input
+
+```
 
 # 🛠️ Troubleshooting
 Common Issues:
